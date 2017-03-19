@@ -1,15 +1,9 @@
-#could use pop
-#could use array.length.times to count it down
+class BubbleSort
 
-#sorter = BubbleSort.new
-
-sorter = Array.new
-sorter = ["d", "b", "a", "c"]
-
-def sort()
+  def sort(sorter)
     i = 0
     while i < sorter.length
-    pulled_element = sorter.shift
+      pulled_element = sorter.shift
       if pulled_element > sorter[0]
         if pulled_element > sorter[1] 
           if pulled_element > sorter[2]
@@ -25,6 +19,10 @@ def sort()
       end
       i += 1
     end
+    p sorter
   end
 
-puts sorter.sort
+end
+
+sorter = BubbleSort.new
+sorter.sort (["d", "b", "a", "c"])
