@@ -12,12 +12,12 @@ class InsertionSort
         while i < insertion_sorted.length
           if pulled_element > insertion_sorted[i]
             i += 1
-          elsif pulled_element < insertion_sorted[i]
-            insertion_sorted.insert(i, pulled_element)
-            break
-          end
-          if i == insertion_sorted.length
+            if i == insertion_sorted.length
             insertion_sorted.insert(-1, pulled_element)
+            break
+            end
+          else 
+            insertion_sorted.insert(i, pulled_element)
             break
           end
         end
