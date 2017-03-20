@@ -1,27 +1,19 @@
 class BubbleSort
-
   def sort(sorter)
-    i = 0
-    while i < sorter.length
-      pulled_element = sorter.shift
-      if pulled_element > sorter[0]
-        if pulled_element > sorter[1] 
-          if pulled_element > sorter[2]
-            sorter.insert(3, pulled_element)
-          else
-            sorter.insert(2, pulled_element)
-          end
-        else
-          sorter.insert(1, pulled_element)
-        end  
-      else
-        sorter.insert(0, pulled_element)
+    in_order = false
+    while in_order == false
+      i = 0
+      in_order = true
+      while i < sorter.length - 1
+        if sorter[i] > sorter[i + 1]
+          sorter[i], sorter[i + 1] = sorter[i + 1], sorter[i]
+          in_order = false
+        end
+        i += 1
       end
-      i += 1
-    end
-    p sorter
+    end  
+    p sorter  
   end
-
 end
 
 sorter = BubbleSort.new
